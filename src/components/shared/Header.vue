@@ -1,25 +1,28 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-6">
-        <ul class="nav nav-pills">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-left">
+        <ul class="nav navbar-nav">
           <router-link to="/" tag="li" active-class="active" exact><a>Stock Trader</a></router-link>
           <router-link to="/portfolio" tag="li" active-class="active"><a>Portfolio</a></router-link>
           <router-link to="/stocks" tag="li" active-class="active"><a>Stocks</a></router-link>
         </ul>
       </div>
-      <div class="col-xs-6">
-        <ul class="nav nav-pills">
-          <li><a>End Day</a></li>
-          <li><a>Save & Load</a></li>
-          <li><a>Funds:</a></li>
+      <div class=" navbar-right">
+        <ul class="nav navbar-nav">
+          <li><a href="#">End Day</a></li>
+          <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Save & Load<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Save</a></li>
+              <li><a href="#">Load</a></li>
+            </ul>
+          </li>
         </ul>
-      </div>
-      <div class="col-xs-12">
-        <hr>
+        <p class="navbar-text">Funds:</p>
       </div>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>
