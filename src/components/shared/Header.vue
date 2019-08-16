@@ -3,16 +3,16 @@
     <div class="row">
       <div class="col-xs-6">
         <ul class="nav nav-pills">
-          <li role="presentation"><a>Stock Trader</a></li>
-          <li role="presentation"><a>Portfolio</a></li>
-          <li role="presentation"><a>Stocks</a></li>
+          <router-link to="/" tag="li" active-class="active" exact><a>Stock Trader</a></router-link>
+          <router-link to="/portfolio" tag="li" active-class="active"><a>Portfolio</a></router-link>
+          <router-link to="/stocks" tag="li" active-class="active"><a>Stocks</a></router-link>
         </ul>
       </div>
       <div class="col-xs-6">
         <ul class="nav nav-pills">
-          <li role="presentation"><a>End Day</a></li>
-          <li role="presentation"><a>Save & Load</a></li>
-          <li role="presentation"><a>Funds:</a></li>
+          <li><a>End Day</a></li>
+          <li><a>Save & Load</a></li>
+          <li><a>Funds:</a></li>
         </ul>
       </div>
       <div class="col-xs-12">
