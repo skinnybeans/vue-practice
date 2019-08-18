@@ -2,10 +2,10 @@
   <div class="col-md-4 col-xs-6">
     <div class="panel panel-info">
       <div class="panel-heading">
-        <h2 class="panel-title">{{ name }}</h2>
+        <h2 class="panel-title">{{ id }}</h2>
       </div>
       <div class="panel-body">
-        <p>Price: $$</p>
+        <p>Price: ${{stock.price}}</p>
         <form class="form-horizontal" v-on:submit.prevent>
           <div class="form-group">
             <label for="quantity" class="col-xs-3 control-label">Quantity:</label>
@@ -21,8 +21,21 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
+
+
 export default {
-  props: ['name'],
+  props: ['id'],
+  computed: {
+    // ...mapGetters('stocks',{
+    //   stockfunc: 'getStockById'
+    // }),
+    stock () {
+      //return this.stockfunc(this.id)
+      return this.$store.getters['stocks/getStockById'](this.id)
+    }
+  },
   methods: {
     buyStock() {
       console.log('bought something')

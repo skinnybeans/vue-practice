@@ -10,7 +10,7 @@
       </div>
       <div class=" navbar-right">
         <ul class="nav navbar-nav">
-          <li><a href="#">End Day</a></li>
+          <li><a href="#" @click="updatePrices">End Day</a></li>
           <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Save & Load<span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -27,6 +27,10 @@
 
 <script>
 export default {
-  
+  methods: {
+    updatePrices() {
+      this.$store.commit('stocks/updateStockPrices')
+    }
+  }
 }
 </script>
