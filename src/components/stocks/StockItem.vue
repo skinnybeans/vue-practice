@@ -28,17 +28,13 @@ import { mapGetters } from 'vuex'
 export default {
   props: ['id'],
   computed: {
-    // ...mapGetters('stocks',{
-    //   stockfunc: 'getStockById'
-    // }),
     stock () {
-      //return this.stockfunc(this.id)
       return this.$store.getters['stocks/getStockById'](this.id)
     }
   },
   methods: {
     buyStock() {
-      this.$store.commit('portfolio/buyStock', {id: this.id, quantity: this.quantity})
+      this.$store.commit('portfolio/buyStock', {id: this.id, quantity: this.quantity, price: this.stock.price})
       this.quantity = 0
     }
   },

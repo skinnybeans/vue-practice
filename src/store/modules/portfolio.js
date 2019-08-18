@@ -2,7 +2,7 @@ export const portfolio = {
   namespaced: true,
   state: {
     ownedStocks: [{ id: 'apple', quantity: 5}],
-    funds: 10000
+    funds: 5000
   },
   mutations: {
     buyStock(state, data) {
@@ -17,6 +17,8 @@ export const portfolio = {
       } else {
         state.ownedStocks.push(data)
       }
+      
+      state.funds -= data.quantity * data.price
     }
   },
   actions: {

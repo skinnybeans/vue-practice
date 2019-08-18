@@ -19,7 +19,7 @@
             </ul>
           </li>
         </ul>
-        <p class="navbar-text">Funds:</p>
+        <p class="navbar-text">Funds: {{ funds }}</p>
       </div>
     </div>
   </nav>
@@ -27,6 +27,11 @@
 
 <script>
 export default {
+  computed: {
+    funds() {
+      return this.$store.state.portfolio.funds
+    }
+  },
   methods: {
     updatePrices() {
       this.$store.commit('stocks/updateStockPrices')
