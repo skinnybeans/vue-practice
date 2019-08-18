@@ -10,7 +10,7 @@
           <div class="form-group">
             <label for="quantity" class="col-xs-3 control-label">Quantity:</label>
             <div class="col-xs-3">
-              <input class="form-control" type="text" id="quantity">
+              <input class="form-control" type="text" id="quantity" v-model="quantity">
             </div>
             <button class="btn btn-primary" @click="buyStock">Buy</button>
           </div>
@@ -38,7 +38,13 @@ export default {
   },
   methods: {
     buyStock() {
-      console.log('bought something')
+      this.$store.commit('portfolio/buyStock', {id: this.id, quantity: this.quantity})
+      this.quantity = 0
+    }
+  },
+  data() {
+    return {
+      quantity: 0
     }
   }
 }

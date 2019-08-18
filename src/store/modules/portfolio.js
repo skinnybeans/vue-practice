@@ -1,13 +1,22 @@
 export const portfolio = {
   namespaced: true,
   state: {
-    ownedStocks: [{ id: 'apple', quantity: 5}]
+    ownedStocks: [{ id: 'apple', quantity: 5}],
+    funds: 10000
   },
   mutations: {
     buyStock(state, data) {
-      state.ownedStocks.find( stock => {
-        stock.id = data.id
-      }).quantity += data.quantity
+      data.quantity = Number(data.quantity)
+      // do we already own the stock
+      const stock = state.ownedStocks.find( item => {
+        return item.id === data.id
+      })
+
+      if (stock) {
+        stock.quantity += data.quantity
+      } else {
+        state.ownedStocks.push(data)
+      }
     }
   },
   actions: {
