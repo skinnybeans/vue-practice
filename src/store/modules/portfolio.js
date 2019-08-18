@@ -7,7 +7,7 @@ export const portfolio = {
   mutations: {
     buyStock(state, data) {
       data.quantity = Number(data.quantity)
-      // do we already own the stock
+
       const stock = state.ownedStocks.find( item => {
         return item.id === data.id
       })
@@ -19,9 +19,18 @@ export const portfolio = {
       }
       
       state.funds -= data.quantity * data.price
+    },
+    sellStock(state, data) {
+      data.stock.quantity -= data.quantity
+
+      state.funds += (data.quantity * data.price)
     }
   },
   actions: {
+    sellStock(context, data) {
+      const stock = context.getters.getOwnedStockById(data.id);
+      context.commit('sellStock', {stock: stock, quantity: data.quantity, price: data.price})
+    }
   },
   getters: {
     getOwnedStocks: state => {

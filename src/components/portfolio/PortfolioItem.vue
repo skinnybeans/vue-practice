@@ -5,13 +5,13 @@
         <h2 class="panel-title">{{ stockId }}</h2>
       </div>
       <div class="panel-body">
-        <p>Sell Price: ${{ sellingPrice }}</p>
+        <p>Sell Price: ${{ sellingPrice.toFixed(2) }}</p>
         <p>Owned: {{ ownedQuantity }}</p>
         <form class="form-horizontal" v-on:submit.prevent>
           <div class="form-group">
             <label for="quantity" class="col-xs-3 control-label">Quantity:</label>
             <div class="col-xs-3">
-              <input class="form-control" type="text" id="quantity" v-model="amount">
+              <input class="form-control" type="number" id="quantity" v-model="sellQuantity">
             </div>
             <button class="btn btn-primary" @click="sellStock">Sell</button>
           </div>
@@ -34,12 +34,16 @@ export default {
   },
   methods: {
     sellStock() {
-      console.log(`Sold ${this.amount}`)
+      const sell = Math.min(parseInt(this.ownedQuantity), parseInt(this.sellQuantity))
+      this.$store.dispatch('portfolio/sellStock', {id: this.stockId, quantity: sell, price: parseFloat(this.sellingPrice)})
+      
+      alert(`Sold ${this.stockId} stock`)
+      this.sellQuantity = 0
     }
   },
   data() {
     return {
-      amount: 0
+      sellQuantity: ''
     }
   }
 }

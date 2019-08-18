@@ -19,7 +19,7 @@
             </ul>
           </li>
         </ul>
-        <p class="navbar-text">Funds: {{ funds }}</p>
+        <p class="navbar-text">Funds: {{ funds.toFixed(2) }}</p>
       </div>
     </div>
   </nav>
@@ -34,6 +34,7 @@ export default {
   },
   methods: {
     updatePrices() {
+      alert('A new day has dawned')
       this.$store.commit('stocks/updateStockPrices')
     }
   }

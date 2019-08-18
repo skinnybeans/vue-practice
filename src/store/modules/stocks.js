@@ -10,9 +10,9 @@ export const stocks = {
   mutations: {
     updateStockPrices(state) {
       state.stocks = [
-        { id: 'apple', price: (Math.random() * 15 + 5).toFixed(2) },
-        { id: 'google', price: (Math.random() * 15 + 5).toFixed(2) },
-        { id: 'microsoft', price: (Math.random() * 15 + 5).toFixed(2) },
+        { id: 'apple', price: (Math.random() * 15 + 5) },
+        { id: 'google', price: (Math.random() * 15 + 5) },
+        { id: 'microsoft', price: (Math.random() * 15 + 5) },
       ]
     } 
   },

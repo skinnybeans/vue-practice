@@ -6,7 +6,7 @@
         <p>You may save & load your data</p>
         <p>Click end day to start a new day</p>
         <hr>
-        <h3>Your funds: $$</h3>
+        <h3>Your funds: ${{funds}}</h3>
       </div>
     </div>
   </div>
@@ -14,7 +14,11 @@
 
 <script>
 export default {
-  
+  computed: {
+    funds() {
+      return this.$store.state.portfolio.funds
+    }
+  }
 }
 </script>
 
