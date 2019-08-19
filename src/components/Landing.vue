@@ -1,12 +1,13 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 panel panel-body">
-        <h1>Trade or view your portfolio</h1>
-        <p>You may save & load your data</p>
-        <p>Click end day to start a new day</p>
-        <hr>
-        <h3>Your funds: ${{funds}}</h3>
+      <div class="col-xs card border-0">
+        <h1 class="card-title">Trade or view your portfolio</h1>
+        <div class="card-body">
+          <p class="card-text">You may save & load your data</p>
+          <p class="card-text">Click end day to start a new day</p>
+        </div>
+        <h3 class="card-subtitle">Your funds: ${{funds}}</h3>
       </div>
     </div>
   </div>
