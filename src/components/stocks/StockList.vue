@@ -1,6 +1,10 @@
 <template>
-  <div>
-    <h1>Stock List</h1>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <h1>Stock List</h1>
+      </div>
+    </div>
     <div class="row">
       <app-stock-item v-for="stock in stocks" :key="stock.id" :id="stock.id"></app-stock-item>
     </div>

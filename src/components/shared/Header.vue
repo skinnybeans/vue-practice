@@ -84,3 +84,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.active {
+  background-color: lightblue;
+  border-radius: 3px;
+}
+</style>
