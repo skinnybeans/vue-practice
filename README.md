@@ -1,29 +1,8 @@
-# s18-project
+# vue practice
 
-## Project setup
-```
-npm install
-```
+little practice project for getting familiar with Vue things.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- components
+- vue-router
+- vuex
+- vue-resource
