@@ -24,12 +24,21 @@ export const portfolio = {
       data.stock.quantity -= data.quantity
 
       state.funds += (data.quantity * data.price)
+    },
+    removeStock(state, data) {
+      const index = state.ownedStocks.findIndex( a => a.id === data)
+      if (index >= 0) {
+        state.ownedStocks.splice(index, 1)
+      }
     }
   },
   actions: {
     sellStock(context, data) {
       const stock = context.getters.getOwnedStockById(data.id);
       context.commit('sellStock', {stock: stock, quantity: data.quantity, price: data.price})
+      if (stock.quantity === 0) {
+        context.commit('removeStock', stock.id)
+      }
     }
   },
   getters: {
