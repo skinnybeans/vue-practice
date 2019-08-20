@@ -1,20 +1,20 @@
 <template>
-  <div class="col-md-4 col-xs-6">
-    <div class="panel panel-success">
-      <div class="panel-heading">
-        <h2 class="panel-title">{{ stockId }}</h2>
+  <div class="col-md-6 col-lg-4 mb-3">
+    <div class="card border border-primary rounded">
+      <div class="card-header  border-primary bg-primary text-white py-1">
+        <h4 class="card-title mb-0">{{ stockId }}</h4>
       </div>
-      <div class="panel-body">
-        <p>Sell Price: ${{ sellingPrice.toFixed(2) }}</p>
-        <p>Owned: {{ ownedQuantity }}</p>
-        <form class="form-horizontal" v-on:submit.prevent>
-          <div class="form-group">
-            <label for="quantity" class="col-xs-3 control-label">Quantity:</label>
-            <div class="col-xs-3">
+      <div class="card-body">
+        <p class="card-text">Sell Price: ${{ sellingPrice.toFixed(2) }}</p>
+        <p class="card-text">Owned: {{ ownedQuantity }}</p>
+        <form v-on:submit.prevent>
+          <div class="form-group row justify-content-between mx-0">
+            <label for="quantity" class="col-6 col-form-label pl-0">Quantity:</label>
+            <div class="col-6">
               <input class="form-control" type="number" id="quantity" v-model="sellQuantity">
             </div>
-            <button class="btn btn-primary" @click="sellStock">Sell</button>
           </div>
+          <button class="btn btn-primary" @click="sellStock">Sell</button>
         </form>
       </div>
     </div>
