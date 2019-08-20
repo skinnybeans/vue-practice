@@ -14,7 +14,12 @@
                 <input class="form-control" type="number" id="quantity" v-model="quantity">
               </div>
             </div>
-            <button class="btn btn-primary" @click="buyStock">Buy</button>
+            <button
+              class="btn btn-primary"
+              @click="buyStock"
+              :disabled="quantity <= 0 || !Number.isInteger(Number(quantity)) ">
+                Buy
+              </button>
           </form>
         </div>
       </div>
