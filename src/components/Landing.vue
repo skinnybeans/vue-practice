@@ -7,7 +7,7 @@
           <p class="card-text">You may save & load your data</p>
           <p class="card-text">Click end day to start a new day</p>
         </div>
-        <h3 class="card-subtitle">Your funds: ${{funds}}</h3>
+        <h3 class="card-subtitle">Your funds: ${{funds.toFixed(2)}}</h3>
       </div>
     </div>
   </div>
