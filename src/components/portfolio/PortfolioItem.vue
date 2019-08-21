@@ -11,13 +11,13 @@
           <div class="form-group row justify-content-between mx-0">
             <label for="quantity" class="col-6 col-form-label pl-0">Quantity:</label>
             <div class="col-6">
-              <input class="form-control" type="number" id="quantity" v-model="sellQuantity">
+              <input class="form-control" type="number" id="quantity" v-model.number="sellQuantity">
             </div>
           </div>
           <button
             class="btn btn-primary"
             @click="sellStock"
-            :disabled="sellQuantity <= 0 || !Number.isInteger(Number(sellQuantity))">
+            :disabled="sellQuantity <= 0 || sellQuantity > ownedQuantity || !Number.isInteger(sellQuantity)">
               Sell
           </button>
         </form>
